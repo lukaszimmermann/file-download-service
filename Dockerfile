@@ -9,4 +9,8 @@ RUN addgroup -S app && \
     chown -R app:app /opt && \
     rm -rf /opt/requirements.txt /tmp/* /var/tmp/*
 USER app
+
+# App configuration
+ENV CONFIG_FILES_DIR /opt/files
 ENTRYPOINT [ "python", "/opt/app/app.py" ]
+EXPOSE 5000
